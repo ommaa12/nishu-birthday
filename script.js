@@ -98,7 +98,7 @@ const CONFIG = {
 
   // 5. Birthday Letter
   birthdayLetter: {
-    date: "October 5, 2026",
+    date: "October 6, 2026",
     greeting: "Dearest Nishu,",
     closing: "Forever & Always With All My Love,",
     signature: "Your Loving Husband ❤️",
