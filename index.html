@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, My Love | A Romantic Journey</title>
+  <meta name="description" content="A luxury romantic birthday celebration dedicated to my beautiful wife, featuring our song, cherished memories, a heartfelt letter, and an unforgettable surprise.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+
+  <!-- Google Fonts for Luxury Editorial Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient Particle Canvas for Sparkles & Floating Hearts -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Navigation / Audio Quick Bar -->
+  <header class="navbar" id="main-nav">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-heart">❤️</span>
+        <span class="logo-text" id="nav-logo-text">Forever Yours</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#music-section" class="nav-link">Our Song</a>
+        <a href="#memories-section" class="nav-link">Memories</a>
+        <a href="#letter-section" class="nav-link">Letter</a>
+        <a href="#reasons-section" class="nav-link">Reasons</a>
+        <a href="#surprise-section" class="nav-link surprise-nav-link">Final Surprise ✨</a>
+      </nav>
+      <!-- Quick Mini Player Toggle -->
+      <button class="nav-music-btn" id="nav-music-toggle" aria-label="Toggle Background Music">
+        <span class="nav-music-icon">🎵</span>
+        <span class="nav-music-label" id="nav-music-status">Play Song</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 1. Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg-wrapper">
+      <img src="assets/cover.jpg" alt="Romantic Cover" class="hero-bg-img" id="hero-bg">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge animate-fade-in">
+        <span class="sparkle-icon">✨</span>
+        <span class="badge-text" id="hero-badge-text">Today is All About You</span>
+        <span class="sparkle-icon">✨</span>
+      </div>
+
+      <h1 class="hero-title animate-fade-in" id="hero-title">
+        Happy Birthday <span class="heart-pulse">❤️</span>
+      </h1>
+
+      <p class="hero-subtitle animate-fade-in" id="hero-subtitle">
+        My Beautiful Wife
+      </p>
+
+      <p class="hero-description animate-fade-in" id="hero-description">
+        Every single day with you is a gift, but today we celebrate the day the world was blessed with you.
+      </p>
+
+      <div class="hero-cta-wrapper animate-fade-in">
+        <a href="#music-section" class="btn btn-luxury" id="hero-cta-btn">
+          <span>Begin Our Journey</span>
+          <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Floating Scroll Indicator -->
+    <a href="#music-section" class="scroll-indicator" aria-label="Scroll Down">
+      <span class="scroll-mouse">
+        <span class="scroll-wheel"></span>
+      </span>
+      <span class="scroll-label">Scroll to Explore</span>
+    </a>
+  </section>
+
+  <!-- Main Content Wrapper -->
+  <main class="main-content">
+
+    <!-- 2. Our Song Section (The Centerpiece) -->
+    <section class="section music-section" id="music-section">
+      <div class="section-container">
+        <div class="section-header reveal">
+          <span class="section-tag">The Melody of Us</span>
+          <h2 class="section-title">Our Song</h2>
+          <div class="gold-divider"></div>
+          <p class="section-subtitle">The soundtrack to my favorite love story — yours and mine.</p>
+        </div>
+
+        <div class="music-card-wrapper reveal">
+          <div class="music-card glass-panel" id="music-card">
+            
+            <!-- Vinyl & Artwork Showcase -->
+            <div class="player-visual">
+              <div class="vinyl-container" id="vinyl-disc">
+                <div class="vinyl-grooves"></div>
+                <div class="vinyl-center">
+                  <img src="assets/cover.jpg" alt="Album Cover" class="vinyl-art" id="vinyl-art">
+                  <div class="vinyl-hole"></div>
+                </div>
+              </div>
+              <div class="turntable-arm" id="turntable-arm">
+                <div class="tonearm-head"></div>
+              </div>
+            </div>
+
+            <!-- Player Controls & Meta -->
+            <div class="player-details">
+              
+              <!-- Two-Song Playlist Selector Tabs -->
+              <div class="playlist-selector" id="playlist-selector" role="tablist" aria-label="Select Song">
+                <button class="playlist-tab active" data-song-index="0" id="tab-song-0" role="tab" aria-selected="true">
+                  <span class="tab-icon">💖</span>
+                  <div class="tab-info">
+                    <span class="tab-title" id="tab-title-0">Nishu Ki Khushiyaan</span>
+                    <span class="tab-badge">Custom Created Song</span>
+                  </div>
+                  <span class="tab-playing-indicator" aria-hidden="true">●</span>
+                </button>
+                <button class="playlist-tab" data-song-index="1" id="tab-song-1" role="tab" aria-selected="false">
+                  <span class="tab-icon">✨</span>
+                  <div class="tab-info">
+                    <span class="tab-title" id="tab-title-1">A Melody For You</span>
+                    <span class="tab-badge">Birthday Waltz</span>
+                  </div>
+                  <span class="tab-playing-indicator" aria-hidden="true">●</span>
+                </button>
+              </div>
+
+              <div class="song-meta">
+                <span class="song-badge" id="song-badge">Personalized Birthday Melody</span>
+                <h3 class="song-title" id="song-title">Nishu Ki Khushiyaan</h3>
+                <p class="song-artist" id="song-artist">Our Special Song Dedicated to Nishu ❤️</p>
+              </div>
+
+              <!-- Animated Soundwave Equalizer -->
+              <div class="soundwave-bar" id="soundwave-container" aria-hidden="true">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+              </div>
+
+              <!-- Audio Element (Local File) -->
+              <audio id="audio-player" preload="metadata">
+                <source id="audio-source" src="assets/song2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+
+              <!-- Progress Bar -->
+              <div class="player-timeline">
+                <span class="time-current" id="time-current">0:00</span>
+                <div class="progress-bar-container" id="progress-container" role="slider" aria-label="Audio progress slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+                  <div class="progress-bar-buffered" id="progress-buffered"></div>
+                  <div class="progress-bar-fill" id="progress-fill"></div>
+                  <div class="progress-thumb" id="progress-thumb"></div>
+                </div>
+                <span class="time-duration" id="time-duration">0:00</span>
+              </div>
+
+              <!-- Control Buttons -->
+              <div class="player-controls">
+                <button class="ctrl-btn secondary-btn" id="btn-prev-song" aria-label="Previous Song" title="Previous Track">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="19 20 9 12 19 4 19 20"></polygon>
+                    <line x1="5" y1="19" x2="5" y2="5"></line>
+                  </svg>
+                </button>
+
+                <button class="ctrl-btn secondary-btn" id="btn-replay" aria-label="Replay Song" title="Replay from start">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                </button>
+
+                <button class="ctrl-btn play-main-btn" id="btn-play-pause" aria-label="Play or Pause Song">
+                  <svg class="icon-play" id="icon-play" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                  <svg class="icon-pause" id="icon-pause" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                  </svg>
+                </button>
+
+                <button class="ctrl-btn secondary-btn" id="btn-next-song" aria-label="Next Song" title="Next Track">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                    <line x1="19" y1="5" x2="19" y2="19"></line>
+                  </svg>
+                </button>
+
+                <div class="volume-container">
+                  <button class="ctrl-btn secondary-btn" id="btn-mute" aria-label="Mute or Unmute">
+                    <svg class="icon-volume" id="icon-volume" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                      <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    </svg>
+                    <svg class="icon-muted" id="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+                      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                      <line x1="23" y1="9" x2="17" y2="15"></line>
+                      <line x1="17" y1="9" x2="23" y2="15"></line>
+                    </svg>
+                  </button>
+                  <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.05" value="0.9" aria-label="Volume Slider">
+                </div>
+              </div>
+
+              <!-- Romantic Player Footnote -->
+              <p class="player-quote">
+                “Music sounds sweeter when I’m listening with you.”
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Our Memories Section -->
+    <section class="section memories-section" id="memories-section">
+      <div class="section-container">
+        <div class="section-header reveal">
+          <span class="section-tag">A Love Story in Frames</span>
+          <h2 class="section-title">Our Memories</h2>
+          <div class="gold-divider"></div>
+          <p class="section-subtitle">Every photograph holds a moment where I fell in love with you all over again.</p>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="memories-gallery" id="memories-gallery">
+          <!-- Dynamically populated from CONFIG.galleryImages -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightbox-modal" aria-hidden="true" role="dialog" aria-label="Photo Lightbox">
+      <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close Lightbox">&times;</button>
+        
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous Photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <div class="lightbox-media-container">
+          <img src="" alt="" class="lightbox-img" id="lightbox-img">
+          <div class="lightbox-caption-card">
+            <span class="lightbox-date" id="lightbox-date"></span>
+            <h4 class="lightbox-title" id="lightbox-title"></h4>
+            <p class="lightbox-desc" id="lightbox-desc"></p>
+            <span class="lightbox-counter" id="lightbox-counter">1 / 6</span>
+          </div>
+        </div>
+
+        <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next Photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- 4. Birthday Letter Section -->
+    <section class="section letter-section" id="letter-section">
+      <div class="section-container">
+        <div class="section-header reveal">
+          <span class="section-tag">Straight From My Soul</span>
+          <h2 class="section-title">A Letter To You</h2>
+          <div class="gold-divider"></div>
+          <p class="section-subtitle">Words will never be enough, but here is a piece of my heart.</p>
+        </div>
+
+        <div class="letter-card-wrapper reveal">
+          <div class="letter-card glass-panel" id="letter-card">
+            <div class="letter-wax-seal">
+              <span class="wax-heart">❤️</span>
+            </div>
+            
+            <div class="letter-inner">
+              <div class="letter-header">
+                <span class="letter-date" id="letter-date">October 5, 2026</span>
+                <h3 class="letter-greeting" id="letter-greeting">Dearest Nishu,</h3>
+              </div>
+
+              <!-- Typewriter Container -->
+              <div class="letter-body" id="letter-body">
+                <p id="letter-typed-text" class="typed-text"></p>
+                <span class="typewriter-cursor" id="typewriter-cursor">|</span>
+              </div>
+
+              <div class="letter-footer" id="letter-footer">
+                <p class="letter-closing" id="letter-closing">Forever & Always,</p>
+                <p class="letter-signature" id="letter-signature">Your Loving Husband</p>
+              </div>
+
+              <!-- Typewriter Controls -->
+              <div class="letter-actions">
+                <button class="btn btn-secondary-small" id="btn-replay-letter">Replay Letter ✍️</button>
+                <button class="btn btn-secondary-small" id="btn-skip-letter">Skip to End</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Reasons I Love You Section -->
+    <section class="section reasons-section" id="reasons-section">
+      <div class="section-container">
+        <div class="section-header reveal">
+          <span class="section-tag">Just a Few of Countless Reasons</span>
+          <h2 class="section-title">Reasons I Love You</h2>
+          <div class="gold-divider"></div>
+          <p class="section-subtitle">If I counted every reason, a lifetime wouldn’t be long enough.</p>
+        </div>
+
+        <div class="reasons-grid" id="reasons-grid">
+          <!-- Dynamically populated from CONFIG.reasonsILoveYou -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Final Surprise Section -->
+    <section class="section surprise-section" id="surprise-section">
+      <div class="section-container">
+        <div class="section-header reveal">
+          <span class="section-tag">A Special Moment For You</span>
+          <h2 class="section-title">One Final Surprise</h2>
+          <div class="gold-divider"></div>
+          <p class="section-subtitle">I have prepared something special just for this moment.</p>
+        </div>
+
+        <div class="surprise-container reveal">
+          <!-- Interactive 3D Gift Box -->
+          <div class="gift-box-wrapper" id="gift-box-wrapper">
+            <div class="gift-box" id="gift-box" role="button" tabindex="0" aria-label="Click to open your birthday surprise">
+              <!-- Lid with Ribbon & Bow -->
+              <div class="gift-lid" id="gift-lid">
+                <div class="ribbon-bow">
+                  <span class="bow-left"></span>
+                  <span class="bow-right"></span>
+                  <span class="bow-center"></span>
+                </div>
+                <div class="ribbon-strap horizontal"></div>
+                <div class="ribbon-strap vertical"></div>
+              </div>
+
+              <!-- Box Body -->
+              <div class="gift-body">
+                <div class="ribbon-strap vertical"></div>
+                <div class="ribbon-strap horizontal"></div>
+                <div class="gift-glow-heart">💖</div>
+              </div>
+
+              <!-- Sparkles orbiting the gift -->
+              <div class="sparkle-orbit sparkle-1">✨</div>
+              <div class="sparkle-orbit sparkle-2">🌟</div>
+              <div class="sparkle-orbit sparkle-3">💫</div>
+            </div>
+
+            <p class="gift-tap-prompt" id="gift-tap-prompt">
+              <span class="tap-hand">👆</span> Tap the gift to open your birthday surprise
+            </p>
+          </div>
+
+          <!-- Revealed Surprise Card (Hidden until opened) -->
+          <div class="surprise-reveal-card glass-panel" id="surprise-reveal-card" style="display: none;">
+            <div class="reveal-inner">
+              <div class="reveal-icon-burst">🎉💖✨</div>
+              
+              <h3 class="reveal-message" id="reveal-first-message">
+                I Love You Forever ❤️
+              </h3>
+
+              <div class="reveal-delayed-container" id="reveal-delayed-container">
+                <h2 class="reveal-birthday-title glow-gold" id="reveal-birthday-title">
+                  Happy Birthday, Nishu!
+                </h2>
+                <p class="reveal-romantic-quote" id="reveal-romantic-quote">
+                  May your year ahead be as radiant, joyful, and deeply cherished as you have made my life.
+                </p>
+              </div>
+
+              <div class="reveal-buttons">
+                <button class="btn btn-luxury" id="btn-replay-surprise">
+                  <span>Open Again ✨</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer">
+    <div class="footer-container">
+      <div class="footer-heart-symbol">❤️</div>
+      <p class="footer-primary" id="footer-primary">Made with ❤️</p>
+      <p class="footer-secondary" id="footer-secondary">Only for You</p>
+      <div class="footer-divider"></div>
+      <p class="footer-note" id="footer-note">Forever your biggest admirer, best friend & husband.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
